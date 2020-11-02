@@ -11,4 +11,12 @@ public class SuperArray{
     return size;
   }
 
+  public boolean add(String element){
+    data[size-1]=element;
+    return true;
+  }
+
+  public String[] printarray(){
+    return data;
+  }
 }
