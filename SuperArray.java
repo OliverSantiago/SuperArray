@@ -4,7 +4,7 @@ public class SuperArray{
 
   public SuperArray(){
     data = new String [10];
-    size = data.length;
+    size = 0;
   }
 
   public int size(){
@@ -12,13 +12,14 @@ public class SuperArray{
   }
 
   public boolean add(String element){
-    if(data[size-1]==null){
-    data[size-1]=element;
+    if(size<data.length){
+    data[size]=element;
+    size++;
   }else{
     resize();
-    data[size-1]=element;
+    data[size]=element;
+    size++;
     }
-
     return true;
   }
 
@@ -39,11 +40,16 @@ public class SuperArray{
   private void resize(){
     String[] temp=new String[size+10];
     for (int i = 0; i < size; i++){
-      if (data[i]!=null){
-      temp[i]=data[i];}
+      temp[i]=data[i];
     }
     data = temp;
-    size = data.length;
+    size = 0;
+    for (int i = 0; i < data.length; i++){
+      if (data[i]!=null){
+        size++;
+      }
+    }
+    System.out.println(size);
   }
 
   public boolean isEmpty(){
@@ -61,18 +67,16 @@ public class SuperArray{
       data[i]=null;
     }
     data = new String[0];
-    size = data.length;
+    size = 0;
   }
 
   public String toString(){
     String answer = "[";
     for (int i = 0; i < size; i++){
-      if (data[i]!=null){
         answer = answer + data[i]+Integer.toString(i);
         if (i != size-1){
           answer+=", ";
         }
-      }
       if (i == size-1){
         answer+="]";
       }
