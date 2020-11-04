@@ -39,5 +39,13 @@ public class SuperDrive{
       System.out.println(test.add("Eleventh String"));
       System.out.println(Arrays.toString(test.printarray()));
 
+      System.out.println(test.isEmpty());
+      System.out.println(test.toString());
+      System.out.println(test.contains("Tenth String"));
+      test.add(9,"NEW Tenth String");
+      System.out.println(Arrays.toString(test.printarray()));
+      test.remove(9);
+      System.out.println(Arrays.toString(test.printarray()));
+
   }
 }
