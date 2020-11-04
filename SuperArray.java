@@ -7,6 +7,11 @@ public class SuperArray{
     size = 0;
   }
 
+  public SuperArray(int initialCapacity){
+    data = new String[initialCapacity];
+    size = 0;
+  }
+
   public int size(){
     return size;
   }
@@ -83,4 +88,51 @@ public class SuperArray{
     }
     return answer;
   }
+
+  public boolean contains(String s){
+    for (int i = 0; i < size; i++){
+      if (data[i].equals(s)){
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public void add(int index, String element){
+    int place = 0;
+    if (index < data.length){
+
+      if (data[index]==null){
+        data[index]=element;
+      }else{
+        String temp = data[index];
+        data[index]=element;
+        index++;
+        while(data[index]!=null){
+          String placer = temp;
+          temp = data[index];
+          data[index]=placer;
+          index++;
+        }
+        String placer = temp;
+        temp = data[index];
+        data[index]=placer;
+        index++;
+      }
+    }
+  }
+
+  public String remove(int index){
+    String answer = "Error";
+    if (index<data.length){
+      answer = data[index];
+    }
+    while(data[index+1]!=null){
+      data[index]=data[index+1];
+      index++;
+    }
+    data[index]=data[index+1];
+    return answer;
+  }
+
 }
