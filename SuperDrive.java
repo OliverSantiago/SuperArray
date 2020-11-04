@@ -46,6 +46,8 @@ public class SuperDrive{
       System.out.println(Arrays.toString(test.printarray()));
       test.remove(9);
       System.out.println(Arrays.toString(test.printarray()));
-
+      System.out.println(test.indexOf("Tenth"));
+      System.out.println(test.indexOf("Tenth String"));
+      
   }
 }
