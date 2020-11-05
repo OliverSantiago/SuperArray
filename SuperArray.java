@@ -124,15 +124,20 @@ public class SuperArray{
 
   public String remove(int index){
     String answer = "Error";
+    if (index==size-1){
+      data[index]=null;
+      size = size - 1;
+      return answer;
+    }
     if (index<size){
       answer = data[index];
-    }
-    while(data[index+1]!=null){
+      while(data[index+1]!=null){
+        data[index]=data[index+1];
+        index++;
+      }
       data[index]=data[index+1];
-      index++;
+      size = size - 1;
     }
-    data[index]=data[index+1];
-    size = size - 1;
     return answer;
   }
 
