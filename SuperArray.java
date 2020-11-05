@@ -28,10 +28,6 @@ public class SuperArray{
     return true;
   }
 
-  public String[] printarray(){
-    return data;
-  }
-
   public String get(int index){
     return data[index];
   }
@@ -85,6 +81,9 @@ public class SuperArray{
       if (i == size-1){
         answer+="]";
       }
+    }
+    if (size == 0){
+      answer+="]";
     }
     return answer;
   }
@@ -145,6 +144,10 @@ public class SuperArray{
   }
 
   public String[] toArray(){
-    
+    String[] FinalArray = new String[size];
+    for (int i = 0; i < size; i++){
+      FinalArray[i]=data[i];
+    }
+    return FinalArray;
   }
 }
