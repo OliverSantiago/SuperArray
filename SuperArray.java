@@ -117,7 +117,9 @@ public class SuperArray{
         data[index]=placer;
         index++;
       }
+      size ++;
     }
+
   }
 
   public String remove(int index){
@@ -130,6 +132,7 @@ public class SuperArray{
       index++;
     }
     data[index]=data[index+1];
+    size = size - 1;
     return answer;
   }
 
