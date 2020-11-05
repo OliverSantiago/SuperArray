@@ -50,7 +50,6 @@ public class SuperArray{
         size++;
       }
     }
-    System.out.println(size);
   }
 
   public boolean isEmpty(){
@@ -99,7 +98,7 @@ public class SuperArray{
 
   public void add(int index, String element){
     int place = 0;
-    if (index < data.length){
+    if (index < size){
 
       if (data[index]==null){
         data[index]=element;
@@ -123,7 +122,7 @@ public class SuperArray{
 
   public String remove(int index){
     String answer = "Error";
-    if (index<data.length){
+    if (index<size){
       answer = data[index];
     }
     while(data[index+1]!=null){
