@@ -47,6 +47,23 @@ public class SuperDrive{
       System.out.println(test.toString());
       System.out.println(test.indexOf("Tenth"));
       System.out.println(test.indexOf("Tenth String"));
-      System.out.println(test.toString());
+
+      System.out.println();
+      System.out.println();
+      SuperArray test2 = new SuperArray();
+      test2.add("one");
+      test2.add("two");
+      test2.add("three");
+      test2.add("four");
+      test2.add("five");
+      test2.add("six");
+      test2.add("seven");
+      test2.add("eight");
+      test2.add("nine");
+      test2.add("ten");
+      System.out.println(test2.toString());
+      test2.remove(9);
+      System.out.println(test2.toString());
+
   }
 }
