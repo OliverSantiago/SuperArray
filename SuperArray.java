@@ -74,7 +74,7 @@ public class SuperArray{
   public String toString(){
     String answer = "[";
     for (int i = 0; i < size; i++){
-        answer = answer + data[i]+Integer.toString(i);
+        answer = answer + data[i];
         if (i != size-1){
           answer+=", ";
         }
@@ -149,5 +149,9 @@ public class SuperArray{
       FinalArray[i]=data[i];
     }
     return FinalArray;
+  }
+
+  public static void removeDuplicates(SuperArray s){
+
   }
 }
