@@ -149,4 +149,19 @@ public class SuperArray{
     return FinalArray;
   }
 
+  public int lastIndexOf(String value){
+    String[] temp = new String[data.length];
+    for (int i = 0; i < data.length; i++){
+      temp[i]=data[i];
+    }
+    int index = 0;
+    while (contains(value)){
+      index = indexOf(value);
+      remove(indexOf(value));
+      System.out.println(toString());
+    }
+    data=temp;
+    return index;
+  }
+
 }
