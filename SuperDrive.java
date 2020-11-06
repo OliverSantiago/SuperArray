@@ -62,8 +62,7 @@ public class SuperDrive{
       test2.add("nine");
       test2.add("ten");
       System.out.println(test2.toString());
-      test2.remove(9);
+      test2.remove(-1);
       System.out.println(test2.toString());
-
   }
 }
