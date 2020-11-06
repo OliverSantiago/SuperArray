@@ -97,34 +97,25 @@ public class SuperArray{
   }
 
   public void add(int index, String element){
-    int place = 0;
-    if (index < size){
-
-      if (data[index]==null){
-        data[index]=element;
-      }else{
-        String temp = data[index];
-        data[index]=element;
-        index++;
-        while(data[index]!=null){
-          String placer = temp;
-          temp = data[index];
-          data[index]=placer;
-          index++;
-        }
-        String placer = temp;
-        temp = data[index];
-        data[index]=placer;
-        index++;
-      }
-      size ++;
+    if (size==data.length){
+      resize();
     }
-
+    String[] temp = new String [data.length];
+    for(int i = 0; i < index; i++){
+      temp[i]=data[i];
+    }
+    temp[index]=element;
+    size++;
+    for (int i = index; i < data.length - 1; i++){
+      temp[i+1]=data[i];
+    }
+    data=temp;
   }
 
   public String remove(int index){
-    String answer = "Error";
+    String answer = "";
     if (index==size-1){
+      answer = data[index];
       data[index]=null;
       size = size - 1;
       return answer;
@@ -158,7 +149,4 @@ public class SuperArray{
     return FinalArray;
   }
 
-  public static void removeDuplicates(SuperArray s){
-
-  }
 }
