@@ -61,8 +61,34 @@ public class SuperDrive{
       test2.add("eight");
       test2.add("nine");
       test2.add("ten");
-      System.out.println(test2.toString());
-      test2.remove(-1);
-      System.out.println(test2.toString());
+      //System.out.println(test2.toString());
+      //test2.remove(-1);
+      //System.out.println(test2.toString());
+      //System.out.println(test2.lastIndexOf("ten"));
+
+      SuperArray test3 = new SuperArray();
+      test3.add("one");
+      test3.add("two");
+      test3.add("three");
+      test3.add("four");
+      test3.add("five");
+      test3.add("six");
+      test3.add("seven");
+      test3.add("eight");
+      test3.add("nine");
+      test3.add("ten");
+
+      //System.out.println(test2.equals(test3));
+
+      System.out.println(test(test2));
+  }
+
+  public static SuperArray test(SuperArray test2){
+    SuperArray tester = new SuperArray(5);
+    System.out.println(tester.set(1,test2.get(1)));
+    System.out.println(tester.get(1));
+    SuperArray newtester = tester;
+    System.out.println(newtester.get(1));
+    return newtester;
   }
 }
