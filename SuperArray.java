@@ -158,10 +158,21 @@ public class SuperArray{
     while (contains(value)){
       index = indexOf(value);
       remove(indexOf(value));
-      System.out.println(toString());
     }
     data=temp;
     return index;
   }
 
+  public boolean equals(SuperArray other){
+    for (int i = 0; i < size; i++){
+      if (i < other.size()){
+        if (data[i]!=other.get(i)){
+          return false;
+        }
+      }else{
+        return false;
+      }
+    }
+    return true;
+  }
 }
