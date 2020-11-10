@@ -112,7 +112,21 @@ public class SuperDrive{
         System.out.println("Not Good");
       }
 
+      try{
+        test3.add(-1, "Error?");
+      }catch (IndexOutOfBoundsException e){
+        System.out.println("Yay");
+      }catch (RuntimeException e){
+        System.out.println("Nay");
+      }
 
+      try{
+        test3.remove(-1);
+      }catch (IndexOutOfBoundsException e){
+        System.out.println("Si");
+      }catch (RuntimeException e){
+        System.out.println("No");
+      }
   }
 
   public static SuperArray test(SuperArray test2){
