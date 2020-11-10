@@ -20,12 +20,12 @@ public class SuperDrive{
       //System.out.println(Arrays.toString(one.printarray()));
       //System.out.println(two.toString());
       SuperArray test = new SuperArray();
-      System.out.println(test.size());
+      //System.out.println(test.size());
       test.add("First String");
       test.add("Second String");
-      System.out.println(test.size());
-      System.out.println(test.get(1));
-      System.out.println(test.set(1,"New Second String"));
+      //System.out.println(test.size());
+      //System.out.println(test.get(1));
+      //System.out.println(test.set(1,"New Second String"));
       test.add("Third String");
       test.add("Fourth String");
       test.add("Fifth String");
@@ -34,19 +34,19 @@ public class SuperDrive{
       test.add("Eighth String");
       test.add("Ninth String");
       test.add("Tenth String");
-      System.out.println(test.toString());
+      //System.out.println(test.toString());
       test.add("Eleventh String");
-      System.out.println(test.toString());
+      //System.out.println(test.toString());
 
-      System.out.println(test.isEmpty());
-      System.out.println(test.toString());
-      System.out.println(test.contains("Tenth String"));
+      //System.out.println(test.isEmpty());
+      //System.out.println(test.toString());
+      //System.out.println(test.contains("Tenth String"));
       test.add(9,"NEW Tenth String");
-      System.out.println(test.toString());
+      //System.out.println(test.toString());
       test.remove(9);
-      System.out.println(test.toString());
-      System.out.println(test.indexOf("Tenth"));
-      System.out.println(test.indexOf("Tenth String"));
+      //System.out.println(test.toString());
+      //System.out.println(test.indexOf("Tenth"));
+      //System.out.println(test.indexOf("Tenth String"));
 
       System.out.println();
       System.out.println();
@@ -80,7 +80,39 @@ public class SuperDrive{
 
       //System.out.println(test2.equals(test3));
 
-      System.out.println(test(test2));
+      //System.out.println(test(test2));
+
+      //System.out.println();
+      //System.out.println();
+      //System.out.println();
+      //System.out.println();
+
+      try{
+        SuperArray trying = new SuperArray(-1);
+      } catch (IllegalArgumentException e){
+        System.out.println("Nice");
+      }catch (RuntimeException e){
+        e.printStackTrace();
+        System.out.println("Not Nice");
+      }
+
+      try{
+        test3.get(-1);
+      } catch (IndexOutOfBoundsException e){
+        System.out.println("Cool");
+      } catch (RuntimeException e){
+        System.out.println("Not Cool");
+      }
+
+      try{
+        test3.set(-1,"Error?");
+      }catch (IndexOutOfBoundsException e){
+        System.out.println("Good");
+      }catch (RuntimeException e){
+        System.out.println("Not Good");
+      }
+
+
   }
 
   public static SuperArray test(SuperArray test2){
