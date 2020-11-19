@@ -124,7 +124,26 @@ public class SuperArray{
     data=temp;
   }
 
+
   public String remove(int index){
+    if (index<0||index>=size()){
+      throw new IndexOutOfBoundsException("Oh no! Index is out of bounds");
+    }
+    String answer = data[index];
+    String[] temp = new String [data.length-1];
+    for (int i = 0; i < index; i++){
+      temp[i]=data[i];
+    }
+    for (int i = index; i < size-1; i++){
+      temp[i]=data[i+1];
+    }
+    size -= 1;
+    data=temp;
+    return answer;
+  }
+
+  //trying out new remove instead of this below/////////////////////////////////
+  public String remove2(int index){
     if (index<0||index>=size()){
       throw new IndexOutOfBoundsException("Oh no! Index is out of bounds");
     }
@@ -140,6 +159,9 @@ public class SuperArray{
       while(data[index+1]!=null){
         data[index]=data[index+1];
         index++;
+        if (index>=size){
+          resize();
+        }
       }
       data[index]=data[index+1];
       size = size - 1;
@@ -155,6 +177,7 @@ public class SuperArray{
     }
     return -1;
   }
+////////////////////////////////////////////////////////////////////////////////
 
   public String[] toArray(){
     String[] FinalArray = new String[size];
